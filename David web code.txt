@@ -1,0 +1,36 @@
+file:BASH.
+pip install flask.
+
+File: PYTHON.
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+# Define routes
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+File: HTML.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to the Homepage!</h1>
+    <p>This is a sample homepage.</p>
+    <a href="/about">About Us</a>
+</body>
+</html>
+
+
+
